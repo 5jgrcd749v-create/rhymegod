@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhyme God — word list</title>
+<meta name="description" content="The pronunciation list Rhyme God searches, shared under CC BY-SA 4.0 with its notices.">
+<style>
+  :root { color-scheme: dark; --bg: #5D00FF; --ink: #FFFFFF; --accent: #CEFF05; --dim: rgba(255,255,255,.8); }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 48px 20px 80px;
+    background: var(--bg); color: var(--ink);
+    font: 17px/1.6 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 28px; color: var(--accent); margin: 0 0 24px; }
+  h2 { font-size: 18px; margin: 32px 0 6px; }
+  p, li { color: var(--dim); }
+  li { margin-bottom: 10px; }
+  a { color: var(--accent); }
+  code { color: var(--ink); }
+  .lead { color: var(--ink); font-size: 20px; }
+  footer { margin-top: 56px; font-size: 13px; color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rhyme God — word list</h1>
+
+  <p class="lead">The pronunciation list the app searches, and the dictionary behind its meaning
+  card, shared under the licences of the works they are built from.</p>
+
+  <h2>Files</h2>
+  <ul>
+    <li><a href="lexicon.tsv">lexicon.tsv</a> — some 87,000 words and how they are pronounced, as
+    shipped in Rhyme God 1.2.1. Licensed
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
+    <li><a href="glossary.tsv">glossary.tsv</a> — meanings, synonyms and antonyms for those words,
+    cut down from WordNet 3.1. WordNet licence.</li>
+    <li><a href="NOTICE.txt">NOTICE.txt</a> — what each file is made from, what was changed, and the
+    licences in full. Keep it with the files.</li>
+  </ul>
+
+  <h2>Made from</h2>
+  <p>The <a href="https://github.com/cmusphinx/cmudict">CMU Pronouncing Dictionary</a> (Carnegie
+  Mellon University, BSD-style licence); <a href="https://github.com/hermitdave/FrequencyWords">FrequencyWords</a>
+  by Hermit Dave (CC BY-SA 4.0), counted from <a href="https://www.opensubtitles.org/">OpenSubtitles</a>
+  via <a href="https://opus.nlpl.eu/">OPUS</a>; pronunciations from
+  <a href="https://en.wiktionary.org/">English Wiktionary</a> and its contributors (CC BY-SA 4.0),
+  gathered with <a href="https://github.com/CUNY-CL/wikipron">WikiPron</a>;
+  <a href="https://wordnet.princeton.edu/">WordNet 3.1</a> (Princeton University); and a short
+  hand-written list of newer words and sung stresses (© 2026 Selfish Pursuits, CC BY-SA 4.0).</p>
+
+  <h2>What was changed</h2>
+  <p>Words were ranked by frequency and the rare ones dropped; names and modern coinages were
+  tagged; slurs were removed. Wiktionary's pronunciations were converted from IPA to the CMU
+  dictionary's ARPAbet, with stress worked out from the vowels. WordNet was cut to these words, four
+  meanings a word, and only synonyms the app can rhyme.</p>
+
+  <h2>Format</h2>
+  <p><code>lexicon.tsv</code>: one pronunciation per line, tab separated — word, frequency rank
+  (lower is more common), flags (<code>n</code> a name, <code>m</code> modern or slang), ARPAbet
+  phones. <code>glossary.tsv</code>: one sense per line — word, part of speech, definition,
+  synonyms, antonyms.</p>
+
+  <footer><a href="../index.html">Support</a> · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+</body>
+</html>

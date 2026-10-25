@@ -1,0 +1,115 @@
+# Rhyme God's word list
+
+`lexicon.tsv` is the pronunciation list that Rhyme God searches, as shipped in Rhyme God 1.2.1
+(build 6) for iPhone, iPad and Mac. It is published here because it is an adaptation of works
+licensed CC BY-SA 4.0, which asks that adaptations be shared under the same terms. `glossary.tsv`,
+the dictionary and thesaurus behind the app's meaning card, is published beside it. Keep this
+notice with the files.
+
+## Licence
+
+`lexicon.tsv` is licensed under Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/ — legal code at
+https://creativecommons.org/licenses/by-sa/4.0/legalcode. You may copy it, change it and sell it,
+provided you credit the sources below, say what you changed, and share what you make from it under
+the same licence. It comes with no warranty of any kind.
+
+`glossary.tsv` is WordNet 3.1 data, cut down as described below, under the WordNet licence
+reproduced at the end of this notice. The choice of words follows `lexicon.tsv`, so where that
+matters the glossary is offered under CC BY-SA 4.0 as well.
+
+## What `lexicon.tsv` is made from
+
+1. **The CMU Pronouncing Dictionary** — Copyright (C) 1993-2015 Carnegie Mellon University.
+   https://github.com/cmusphinx/cmudict. Most of the pronunciations. BSD-style licence, reproduced
+   in full below.
+2. **FrequencyWords** by Hermit Dave — https://github.com/hermitdave/FrequencyWords — lists
+   licensed CC BY-SA 4.0. How common each word is, which decides whether a word is kept and the rank
+   it carries. The counts come from the OpenSubtitles corpus (https://www.opensubtitles.org/) as
+   distributed by OPUS (https://opus.nlpl.eu/).
+3. **English Wiktionary** — https://en.wiktionary.org/ — written by its contributors and licensed
+   CC BY-SA 4.0 (also available under the GNU Free Documentation License), gathered with WikiPron
+   (https://github.com/CUNY-CL/wikipron; Lee et al., "Massively multilingual pronunciation mining
+   with WikiPron", LREC 2020). Pronunciations for words the CMU dictionary never had: emoji, ramen,
+   rizz, cosplay.
+4. **Rhyme God's own additions** — © 2026 Selfish Pursuits, licensed CC BY-SA 4.0 like the rest:
+   a short hand-written list of words newer than both dictionaries (vape, tiktok, gaslighting) and
+   of sung stresses added beside a word's spoken one (HEL-lo beside hel-LO).
+
+## What was changed
+
+Words were ranked by frequency and the rare ones dropped; names and modern coinages were tagged;
+slurs were removed. Wiktionary's pronunciations were converted from IPA to the CMU dictionary's
+ARPAbet notation, and their stress was worked out from the vowels, since Wiktionary's published
+lists carry no stress marks. The hand-written words and sung stresses were added. WordNet was cut
+to the words in this list, with at most four meanings a word and only synonyms that are themselves
+in the list.
+
+`Scripts/build_lexicon.py` and `Scripts/build_glossary.py` in the Rhyme God repository build the
+two files and document each step.
+
+## Format
+
+`lexicon.tsv`: one pronunciation per line, tab separated:
+
+```
+word <TAB> rank <TAB> flags <TAB> ARPAbet phones
+```
+
+`rank` is the frequency rank, lower being more common. `flags` is `n` for a name, `m` for a modern
+or slang word, empty otherwise.
+
+`glossary.tsv`: one sense per line, in WordNet's order (most common first), tab separated:
+
+```
+word <TAB> part of speech (n, v, adj, adv) <TAB> definition <TAB> synonyms, comma-separated <TAB> antonyms
+```
+
+## The CMU Pronouncing Dictionary licence
+
+Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted
+provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions
+   and the following disclaimer. The contents of this file are deemed to be source code.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of
+   conditions and the following disclaimer in the documentation and/or other materials provided
+   with the distribution.
+
+This work was supported in part by funding from the Defense Advanced Research Projects Agency, the
+Office of Naval Research and the National Science Foundation of the United States of America, and
+by member companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge the
+contributions of many volunteers to the expansion and improvement of this dictionary.
+
+THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY NOR ITS
+EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+## The WordNet licence
+
+WordNet 3.1, Princeton University. https://wordnet.princeton.edu/
+
+This software and database is being provided to you, the LICENSEE, by Princeton University under
+the following license. By obtaining, using and/or copying this software and database, you agree
+that you have read, understood, and will comply with these terms and conditions.: Permission to
+use, copy, modify and distribute this software and database and its documentation for any purpose
+and without fee or royalty is hereby granted, provided that you agree to comply with the following
+copyright notice and statements, including the disclaimer, and that the same appear on ALL copies
+of the software, database and documentation, including modifications that you make for internal
+use or for distribution. WordNet 3.1 Copyright 2011 by Princeton University. All rights reserved.
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS
+OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON UNIVERSITY
+MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR
+THAT THE USE OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY
+PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. The name of Princeton University or Princeton may
+not be used in advertising or publicity pertaining to distribution of the software and/or database.
+Title to copyright in this software, database and any associated documentation shall at all times
+remain with Princeton University and LICENSEE agrees to preserve same.
