@@ -1,10 +1,10 @@
 # Rhyme God's word list
 
-`lexicon.tsv` is the pronunciation list that Rhyme God searches, as shipped in Rhyme God 1.2.4
-(build 9) for iPhone, iPad and Mac. It is published here because it is an adaptation of works
+`lexicon.tsv` is the pronunciation list that Rhyme God searches, as shipped in Rhyme God 1.2.6
+(build 11) for iPhone, iPad and Mac. It is published here because it is an adaptation of works
 licensed CC BY-SA 4.0, which asks that adaptations be shared under the same terms. `glossary.tsv`,
-the dictionary and thesaurus behind the app's meaning card, is published beside it. Keep this
-notice with the files.
+the dictionary and thesaurus behind the app's meaning card, and `phrases.tsv`, the stock phrases it
+offers as rhymes, are published beside it. Keep this notice with the files.
 
 ## Licence
 
@@ -16,7 +16,8 @@ the same licence. It comes with no warranty of any kind.
 
 `glossary.tsv` is WordNet 3.1 data, cut down as described below, under the WordNet licence
 reproduced at the end of this notice. The choice of words follows `lexicon.tsv`, so where that
-matters the glossary is offered under CC BY-SA 4.0 as well.
+matters the glossary is offered under CC BY-SA 4.0 as well. `phrases.tsv` is a selection of WordNet
+3.1's multi-word entries on the same terms.
 
 ## What `lexicon.tsv` is made from
 
@@ -43,10 +44,11 @@ slurs were removed. Wiktionary's pronunciations were converted from IPA to the C
 ARPAbet notation, and their stress was worked out from the vowels, since Wiktionary's published
 lists carry no stress marks. The hand-written words and sung stresses were added. WordNet was cut
 to the words in this list, with at most four meanings a word and only synonyms that are themselves
-in the list.
+in the list. WordNet's multi-word entries were cut to those made of words in this list, then to the
+ones reviewed as phrases people really say, and their meanings added to `glossary.tsv`.
 
-`Scripts/build_lexicon.py` and `Scripts/build_glossary.py` in the Rhyme God repository build the
-two files and document each step.
+`Scripts/build_lexicon.py`, `Scripts/build_glossary.py` and `Scripts/build_phrases.py` in the Rhyme
+God repository build the three files and document each step.
 
 ## Format
 
@@ -64,6 +66,8 @@ or slang word, empty otherwise.
 ```
 word <TAB> part of speech (n, v, adj, adv) <TAB> definition <TAB> synonyms, comma-separated <TAB> antonyms
 ```
+
+`phrases.tsv`: one phrase per line, those with the commonest words first.
 
 ## The CMU Pronouncing Dictionary licence
 
